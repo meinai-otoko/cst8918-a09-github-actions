@@ -1,3 +1,23 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run Terraform Formatting Check
 terraform fmt -check -recursive
+if [ $? -ne 0 ]; then
+  echo "❌ Terraform fmt check failed!"
+  exit 1
+fi
+
+# Run Terraform Validation
 terraform validate
+if [ $? -ne 0 ]; then
+  echo "❌ Terraform validation failed!"
+  exit 1
+fi
+
+# Run TFLint (if installed)
 tflint
+if [ $? -ne 0 ]; then
+  echo "❌ TFLint found issues!"
+  exit 1
+fi
