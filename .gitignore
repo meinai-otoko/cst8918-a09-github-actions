@@ -2,12 +2,3 @@ node_modules/
 .terraform/
 infrastructure/.terraform/
 infrastructure/.terraform/providers/
-.terraform/
-infrastructure/.terraform/
-infrastructure/.terraform/providers/
-.terraform/
-infrastructure/.terraform/
-infrastructure/.terraform/providers/
-.terraform/
-infrastructure/.terraform/
-infrastructure/.terraform/providers/
